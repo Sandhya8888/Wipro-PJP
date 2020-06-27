@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form name="myform" method="post" action="Hello" onsubmit="return validate()">
+<p>
+Username:<input type="text" name="u" id="u" required/>
+</p>
+<p>
+Password:<input type="password" name="p" id="p" required/>
+</p>
+<p>
+Re-type password<input type="password" name="cf" id="cf" required/><span id="error1"></span>
+</p>
+<p>
+<input type="submit" name="submit" value="add"/>
+</p>
+</form>
+</body>
+<script type="text/javascript">
+function validate(){
+	var p = document.forms["myform"]["p"].value;
+	var cf =  document.forms["myform"]["cf"].value;
+	if(p!=cf){
+		document.getElementById("error1").innerHTML ="Password and Confirm password does not match!".fontcolor("red");
+		return false;
+	}
+	else{
+		return true;
+	}
+}
+</script>
+</html>
