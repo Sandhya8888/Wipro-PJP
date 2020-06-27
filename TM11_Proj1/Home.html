@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<style>
+h1{text-align:center;}
+.i{text-align:center;}
+</style>
+<body>
+<h1>Welcome to AP Auctions.Please Enter Bid.</h1>
+<span id="error6" class="i"></span>
+<form name="myform" method="post"  onsubmit="return validate()" action="Project1">
+<div class="i" id="i">
+Item ID:
+<input type="text" name="itemid" id="itemid"/><span id="error1"></span>
+<br>
+Item Name:
+<input type="text" name="itemname" id="itemname"/><span id="error2"></span>
+<br>
+Your name:
+<input type="text" name="uname" id="uname"/><span id="error3"></span>
+<br>
+Your Email Address:
+<input type="email" name="email" id="email"/><span id="error4"></span>
+<br>
+Amount Bid:
+<input type="number" name="bidamount" id="bidamount"/><span id="error5"></span>
+<br>
+Auto-increment bid to match other bidders?:
+<input type="checkbox" name="autoi"  id="autoi">
+<br>
+<input type="submit" name="submit" value="Submit Bid"/>
+</div>
+<div id="errors"></div>
+</form>
+<script type="text/javascript">
+function validate() {
+	var x1=1;
+	var x2=1;
+	var x3=1;
+	var x4=1;
+	var x5=1;
+	var s1 = document.forms["myform"]["itemid"].value;
+	var s2 =  document.forms["myform"]["itemname"].value;
+	var s3 =  document.forms["myform"]["uname"].value;
+	var s4 =  document.forms["myform"]["email"].value;
+	var s5 =  document.forms["myform"]["bidamount"].value;
+	if(s1==""){
+		x1=0;
+		document.getElementById("error1").innerHTML ="Required field!".fontcolor("red");
+	}
+	if(s2==""){
+		x2=0;
+		document.getElementById("error2").innerHTML ="Required field!".fontcolor("red");
+	}
+	if(s3==""){
+		x3=0;
+		document.getElementById("error3").innerHTML ="Required field!".fontcolor("red");
+	}
+	if(s4==""){
+		x4=0;
+		document.getElementById("error4").innerHTML ="Required field!".fontcolor("red");
+	}
+	if(s5==""){
+		x5=0;
+		document.getElementById("error5").innerHTML ="Required field!".fontcolor("red");
+	}
+	if(x1==0 || x2==0 || x3==0 ||x4==0 || x5==0){
+		document.getElementById("error6").innerHTML ="Required Data Missing!".fontcolor("red").concat( "Enter and Resubmit").fontsize(6).bold();
+		return false;
+	}
+
+
+
+
+
+	 }
+</script>
+</body>
+</html>
